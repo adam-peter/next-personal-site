@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import Header from "@/components/Header";
+import Loader from "./Loader";
 
 const getData = async () => {
   const data = await fetch("https://www.reddit.com/.json");
@@ -16,7 +17,9 @@ export default async function Home() {
   const post = data.data.children[0].data.title;
   return (
     <main className={styles.main}>
-      <Header />
+      <Suspense fallback={<Loader />}>
+        <Header />
+      </Suspense>
       <div className={styles.description}>
         <h1>{post}</h1>
         <p>

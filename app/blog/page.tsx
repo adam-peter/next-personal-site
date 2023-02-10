@@ -1,11 +1,8 @@
 import React from 'react'
 
-const Blog = () => {
-  return (
-    <div>
-      Blog route
-    </div>
-  )
+export default function getStaticParams() {
+  return [
+    {postId: "test-post-one"},
+    {postId: "test-post-two"},
+  ]
 }
-
-export default Blog

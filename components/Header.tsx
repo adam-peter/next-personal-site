@@ -3,7 +3,10 @@ import React from 'react'
 
 import HeaderLink from './HeaderLink'
 
-const Header = () => {
+import delay from '@/lib/delay'
+
+const Header = async () => {
+  await delay(5000)
   return (
     <header>
       Header component
