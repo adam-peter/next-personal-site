@@ -1,12 +1,9 @@
-"use client";
 import React from "react";
 
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import ClientSideButton from "./ClientSideButton";
 
 const Contact = () => {
-  const router = useRouter();
-
   return (
     <div>
       <h1>Contact page</h1>
@@ -15,7 +12,7 @@ const Contact = () => {
       {/* dynamic navigation */}
       <Link href={`/blog/${"asdfasdf"}`}>Blog Post</Link>
       {/* client-side navigation (must declare "use client") */}
-      <button onClick={() => router.push("/blog/asdf/fdsa")}>Dynamic blog post</button>
+      <ClientSideButton />
     </div>
   );
 };
