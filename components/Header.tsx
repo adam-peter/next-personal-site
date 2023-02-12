@@ -1,18 +1,17 @@
-"use client"
-import React from 'react'
+import delay from "@/lib/delay";
+import React, { Suspense } from "react";
 
-import HeaderLink from './HeaderLink'
-
-import delay from '@/lib/delay'
+import HeaderLink from "./HeaderLink";
 
 const Header = async () => {
-  await delay(5000)
+  await delay(5000);
+  
   return (
     <header>
       Header component
       <HeaderLink />
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

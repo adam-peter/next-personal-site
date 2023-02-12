@@ -5,7 +5,8 @@ import styles from "./page.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 import Header from "@/components/Header";
-import Loader from "./Loader";
+import Loader from "../components/Loader";
+import { Suspense } from "react";
 
 const getData = async () => {
   const data = await fetch("https://www.reddit.com/.json");
