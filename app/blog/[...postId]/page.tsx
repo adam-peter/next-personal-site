@@ -1,6 +1,10 @@
 import React from "react";
 import delay from "@/lib/delay";
 
+type BlogPostType = {
+  params: any;
+}
+
 const getData = async (postId: string) => {
   const post = await delay(5000);
   return {
@@ -11,7 +15,7 @@ const getData = async (postId: string) => {
   };
 };
 
-const BlogPost = async ({ params }) => {
+const BlogPost: React.FC<BlogPostType> = async ({ params }) => {
   const { postId } = params;
   const post = await getData(postId);
 
